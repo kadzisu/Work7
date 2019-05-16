@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 void Mage::init (int newhp, int newmp, std::string newname)
 {
 	hp = newhp;
@@ -31,19 +29,24 @@ int Mage::cast(Spell & spl, Mage & target)
 {
 	if (hp>0)
 	{
-		cout <<this->name << " hit  " << spl.name << " our" <<target.getname() <<endl; 
+		cout <<this->name << " hit with  " << spl.name << " our " <<target.getname() <<endl <<endl; 
 		target.hit (spl);
-		return 0;
 	}
 
-	else say
-}
-
+	else 
+{
+	this->say("Umer");	
+} 
+return 0;
+	
 void Mage::hit (Spell & spl)
 {
-hp=hp-spl.dhp;
-mp=mp-spl.dmp;
-
+	this->hp -=spl.dhp;
+	this->mp -=spl.dmp;
+	if (hp <= 0)
+	{
+		this->say(" Ya proigral");
+	}
 }
 
 void Main()
@@ -64,13 +67,38 @@ void Main()
 	vanya.init(100,100, " Ivan ");
 	vanya.say(" privet ");
 
-	boris.init(90,80, "Borya");
+	boris.init(90,80, "Boris");
 	boris.say(" auch ");
 
-	vanya.cast(bolt, boris);
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
 
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
 
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
 
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
+
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
+
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
+
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
+
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
+
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
+
+	vanya.cast(bolt, Boris);
+	boris.cast(drain, Ivan);
 
 
 }
